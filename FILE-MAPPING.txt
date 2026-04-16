@@ -1,0 +1,92 @@
+# FILE MAPPING - Which Files Are Duplicates?
+
+## MANUFACTURING CASE STUDIES (4 files → Keep only 1)
+
+┌─────────────────────────────────────────────────────────────────┐
+│ OLD VERSIONS (DELETE)                                           │
+├─────────────────────────────────────────────────────────────────┤
+│ ❌ case-manufacturing.html                                      │
+│    Title: "Grupo Metálicos del Bajío"                          │
+│    Status: Old iteration - different client name               │
+│                                                                 │
+│ ❌ case-manufacturing_1.html                                    │
+│    Title: "Manufactura Automotriz"                             │
+│    Status: Old iteration - different industry focus            │
+│                                                                 │
+│ ❌ case-manufacturing_3.html                                    │
+│    Title: "Manufactura — Sentinel"                             │
+│    Status: EXACT DUPLICATE of case-manufacturing_2.html        │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ✅ FINAL VERSION (KEEP THIS ONE)                                │
+├─────────────────────────────────────────────────────────────────┤
+│ ✅ case-manufacturing_2.html → RENAMED TO: case-sentinel.html  │
+│    Title: "Manufactura — Sentinel · cascabel.ai"               │
+│    Client: "Planta de manufactura de aceros · Bajío, México"   │
+│    Product: Sentinel (Predictive Maintenance)                  │
+└─────────────────────────────────────────────────────────────────┘
+
+
+## REAL ESTATE CASE STUDIES (3 files → Keep only 1)
+
+┌─────────────────────────────────────────────────────────────────┐
+│ OLD VERSIONS (DELETE)                                           │
+├─────────────────────────────────────────────────────────────────┤
+│ ❌ case-realestate.html                                         │
+│    Title: "Administradora Patrimonial Lomas"                   │
+│    Status: Old iteration - different client name               │
+│                                                                 │
+│ ❌ case-realestate_1.html                                       │
+│    Title: "Administración Inmobiliaria"                        │
+│    Status: Old iteration - less detailed                       │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ✅ FINAL VERSION (KEEP THIS ONE)                                │
+├─────────────────────────────────────────────────────────────────┤
+│ ✅ case-realestate_2.html → RENAMED TO: case-concilia.html     │
+│    Title: "Administración Inmobiliaria — Concilia"             │
+│    Client: "Administradora de propiedades · Ciudad de México"  │
+│    Product: Concilia (Payment Reconciliation)                  │
+└─────────────────────────────────────────────────────────────────┘
+
+
+## MATERIALS MANAGEMENT (1 file → Keep it)
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ✅ FINAL VERSION (KEEP THIS ONE)                                │
+├─────────────────────────────────────────────────────────────────┤
+│ ✅ case-materiales.html → RENAMED TO: case-mercado.html        │
+│    Title: "Gestión de Materiales — Mercado"                    │
+│    Client: "Planta de manufactura industrial · Norte México"   │
+│    Product: Mercado (Materials & Pricing Intelligence)         │
+└─────────────────────────────────────────────────────────────────┘
+
+
+## HOMEPAGE (1 file → Keep it)
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ✅ FINAL VERSION (KEEP THIS ONE)                                │
+├─────────────────────────────────────────────────────────────────┤
+│ ✅ cascabel_website.html → RENAMED TO: index.html              │
+│    Title: "cascabel.ai — Servicios"                            │
+│    Purpose: Main landing page                                  │
+└─────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════
+
+SUMMARY:
+
+📊 Files uploaded:       9
+✅ Files to keep:        4
+❌ Files to delete:      5
+
+FINAL STRUCTURE:
+├── index.html           ← Homepage
+├── case-sentinel.html   ← Manufacturing (Sentinel)
+├── case-mercado.html    ← Materials (Mercado)
+└── case-concilia.html   ← Real Estate (Concilia)
+
+═══════════════════════════════════════════════════════════════════
