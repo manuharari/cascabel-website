@@ -43,12 +43,13 @@
 }
 
 .nav-logo-img {
-  height: 1.30em;
+  height: 2.30em;
   width: auto;
   object-fit: contain;
   display: flex;
   align-items: baseline;
   gap: 0; /* 🔥 removes unwanted spacing */
+  margin-right: -3px;
 }
 
   .nav-logo-word {
