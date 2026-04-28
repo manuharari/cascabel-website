@@ -36,7 +36,7 @@
 
 .nav-logo {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 6px;
   font-size: 1.5rem; /* or whatever your logo text uses */
   font-weight: 600;
