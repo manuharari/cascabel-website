@@ -59,6 +59,7 @@
   color: var(--masa);
   letter-spacing: -0.01em;
   margin: 0;
+  margin-left: -3px;
   }
 
   .nav-logo-dot {
