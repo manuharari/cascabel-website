@@ -51,7 +51,7 @@
   display: flex;
   align-items: baseline;
   gap: 0; /* 🔥 removes unwanted spacing */
-  margin-right: -4px;
+  margin-right: -8px;
 }
 
   .nav-logo-word {
