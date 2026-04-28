@@ -682,11 +682,11 @@
   }
 
   /* ── FOOTER ── */
-  footer {
+footer {
   background: #120C05;
-  padding: 3rem 0 2rem; /* REMOVE side padding */
+  padding: 3rem 4rem 2rem;  /* ✅ MATCHES YOUR SITE */
   border-top: 1px solid rgba(196,82,26,0.2);
-  }
+}
 
   .footer-top {
 display: flex;
