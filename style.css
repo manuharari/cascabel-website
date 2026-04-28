@@ -689,11 +689,14 @@
   }
 
   .footer-top {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 2rem;
-    gap: 3rem;
+display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start;
+  width: 100%;       /* CRITICAL: This pushes the columns to the right */
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 2rem;
+  gap: 3rem;
   }
 
   .footer-logo {
@@ -710,8 +713,11 @@
   }
 
   .footer-cols {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+display: grid; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  flex: 1;           /* Tells the columns to "claim" the available space */
+  max-width: 900px;  /* Adjust this to control how far the columns spread */
   }
 
   .footer-col-title {
@@ -746,9 +752,11 @@
   .footer-email:hover { opacity: 0.7; }
 
   .footer-inner {
-  max-width: none;     /* remove constraint */
-  margin: 0;
-  padding: 0 4rem;     /* MATCH your sections */
+width: 100%;
+  max-width: 1400px; /* Optional: prevents it from getting too wide on huge monitors */
+  margin: 0 auto;    /* Centers the whole block */
+  padding: 0 4rem;   /* Matches your other sections */
+  box-sizing: border-box;
 }
 
   /* ── ANIMATIONS ── */
