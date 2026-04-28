@@ -40,6 +40,8 @@
   gap: 6px;
   font-size: 1.5rem; /* or whatever your logo text uses */
   font-weight: 600;
+    text-decoration: none;
+  color: inherit;
 }
 
 .nav-logo-img {
@@ -49,7 +51,7 @@
   display: flex;
   align-items: baseline;
   gap: 0; /* 🔥 removes unwanted spacing */
-  margin-right: -3px;
+  margin-right: -4px;
 }
 
   .nav-logo-word {
@@ -59,7 +61,7 @@
   color: var(--masa);
   letter-spacing: -0.01em;
   margin: 0;
-  margin-left: -3px;
+  margin-left: -4px;
   }
 
   .nav-logo-dot {
