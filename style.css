@@ -115,6 +115,7 @@
     overflow: hidden;
     margin-bottom: 6rem;
     padding-bottom: 4rem;
+    padding-left: 4rem;
   }
 
   .hero-texture {
@@ -280,7 +281,10 @@ section + section {
   }
 
   /* ── SERVICES ── */
-  .services { background: var(--obsidian); }
+  .services { background: var(--obsidian); 
+  padding-left: 4rem;
+  padding-right: 5.5rem;
+  }
 
   .services .section-title { color: var(--masa); }
   .services .section-body  { color: var(--maguey); }
@@ -354,7 +358,10 @@ section + section {
   .service-link:hover { gap: 0.7rem; }
 
   /* ── HOW IT WORKS ── */
-  .how { background: var(--masa); }
+  .how { background: var(--masa);
+  padding-left: 4rem;
+  padding-right: 5.5rem;
+ }
 
   .how-steps {
     margin-top: 4rem;
@@ -406,7 +413,10 @@ section + section {
   }
 
   /* ── CASES ── */
-  .cases { background: var(--piedra); }
+  .cases { background: var(--piedra); 
+  padding-left: 4rem;
+  
+  }
 
   /*.cases-grid {
     margin-top: 3.5rem;
@@ -420,6 +430,7 @@ section + section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin-right: 4.5rem;
 }
 
   .case-card {
@@ -965,3 +976,4 @@ footer {
   }
 
 }
+
