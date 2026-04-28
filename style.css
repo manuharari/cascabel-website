@@ -684,17 +684,37 @@
   /* ── FOOTER ── */
 footer {
   background: #120C05;
-  padding: 3rem 4rem 2rem;  /* ✅ MATCHES YOUR SITE */
+  padding: 3rem 0 2rem; /* Reduced horizontal padding here */
   border-top: 1px solid rgba(196,82,26,0.2);
+  width: 100%;
 }
 
-  .footer-top {
-display: flex;
-  justify-content: space-between; /* This only works if width is 100% */
-  width: 100%; 
+.footer-inner {
+  width: 100%;
+  max-width: 1400px; /* Adjust to match your other site sections */
+  margin: 0 auto;    /* Centers the footer content */
+  padding: 0 4rem;   /* Side breathing room */
+  box-sizing: border-box;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between; 
   align-items: flex-start;
+  width: 100%; 
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 2rem;
   gap: 4rem;
-  }
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  flex: 1; /* This forces the columns to expand and fill the right side */
+  max-width: 850px; /* Prevents columns from spreading too far apart */
+}
 
   .footer-logo {
     font-family: var(--serif);
@@ -707,13 +727,6 @@ display: flex;
   .footer-tagline {
     font-size: 0.75rem; color: var(--maguey);
     margin-top: 0.25rem; font-style: italic;
-  }
-
-  .footer-cols {
-display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  flex-grow: 1;             /* This forces the grid to expand into the empty space */
   }
 
   .footer-col-title {
@@ -747,13 +760,6 @@ display: grid;
   }
   .footer-email:hover { opacity: 0.7; }
 
-  .footer-inner {
-width: 100% !important;   /* Force it to fill the screen */
-  max-width: 1400px;        /* Adjust this to match your desired width */
-  margin: 0 auto;           /* Centers the content within that 1400px */
-  padding: 0 4rem;          /* Matches your site's side breathing room */
-  box-sizing: border-box;
-}
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
