@@ -34,10 +34,19 @@
     border-bottom: 1px solid rgba(196,82,26,0.2);
   }
 
-  .nav-logo {
-    display: flex; align-items: baseline; gap: 0.5rem;
-    text-decoration: none;
-  }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.5rem; /* or whatever your logo text uses */
+  font-weight: 600;
+}
+
+.nav-logo-img {
+  height: 1em;   /* 🔥 THIS is the trick */
+  width: auto;
+}
+
   .nav-logo-word {
     font-family: var(--serif);
     font-size: 1.5rem;
