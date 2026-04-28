@@ -113,10 +113,12 @@
     padding: 0 20px;
     position: relative;
     overflow: hidden;
+    margin-bottom: 6rem;
+    padding-bottom: 4rem;
   }
 
   .hero-texture {
-    position: absolute; inset: 0;
+    position: relative; inset: 0;
     background-image:
       repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(196,82,26,0.04) 80px),
       repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(196,82,26,0.04) 80px);
@@ -204,6 +206,16 @@
 
   /* ── SECTION COMMON ── */
   section { padding: 6rem 0; }
+
+  section {
+  position: relative;
+  display: block;
+  padding: 6rem 0
+}
+
+section + section {
+  margin-top: 4rem;
+}
 
   .section-badge {
     font-size: 0.65rem; font-weight: 500;
