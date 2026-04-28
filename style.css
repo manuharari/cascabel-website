@@ -686,7 +686,6 @@
   background: #120C05;
   padding: 3rem 0 2rem; /* REMOVE side padding */
   border-top: 1px solid rgba(196,82,26,0.2);
-  width: 100vw;
   margin-left: calc(50% - 50vw);
   }
 
