@@ -445,6 +445,7 @@ section + section {
     border: 1px solid var(--polvo);
   }
 
+  
   .case-header {
     padding: 2.5rem 2.5rem 2rem;
     border-bottom: 1px solid rgba(196,82,26,0.15);
