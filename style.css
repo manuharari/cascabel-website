@@ -748,7 +748,7 @@
   .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* controlled spacing */
+  padding: 0 40px; /* match sections */
 }
 
   /* ── ANIMATIONS ── */
@@ -920,5 +920,12 @@
     gap: 1rem;
     text-align: center;
   }
+
+  /* GLOBAL CONTENT ALIGNMENT */
+section > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 }
