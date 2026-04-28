@@ -689,14 +689,11 @@
   }
 
   .footer-top {
-display: flex; 
-  justify-content: space-between; 
+display: flex;
+  justify-content: space-between; /* This only works if width is 100% */
+  width: 100%; 
   align-items: flex-start;
-  width: 100%;       /* CRITICAL: This pushes the columns to the right */
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  margin-bottom: 2rem;
-  gap: 3rem;
+  gap: 4rem;
   }
 
   .footer-logo {
@@ -713,11 +710,10 @@ display: flex;
   }
 
   .footer-cols {
-display: grid; 
+display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  flex: 1;           /* Tells the columns to "claim" the available space */
-  max-width: 900px;  /* Adjust this to control how far the columns spread */
+  gap: 3rem;
+  flex-grow: 1;             /* This forces the grid to expand into the empty space */
   }
 
   .footer-col-title {
@@ -752,10 +748,10 @@ display: grid;
   .footer-email:hover { opacity: 0.7; }
 
   .footer-inner {
-width: 100%;
-  max-width: 1400px; /* Optional: prevents it from getting too wide on huge monitors */
-  margin: 0 auto;    /* Centers the whole block */
-  padding: 0 4rem;   /* Matches your other sections */
+width: 100% !important;   /* Force it to fill the screen */
+  max-width: 1400px;        /* Adjust this to match your desired width */
+  margin: 0 auto;           /* Centers the content within that 1400px */
+  padding: 0 4rem;          /* Matches your site's side breathing room */
   box-sizing: border-box;
 }
 
