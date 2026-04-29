@@ -724,6 +724,8 @@ section + section {
   .form-note {
     font-size: 0.72rem; font-weight: 300;
     color: var(--humo); margin-top: 0.25rem;
+    padding-top: 1rem;
+    text-align: center;
   }
 
   /* ── FOOTER ── */
