@@ -783,7 +783,7 @@ footer {
     color: var(--chile); margin-bottom: 0.75rem;
   }
 
-  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0rem; }
 
   .footer-links a {
     font-size: 0.8rem; font-weight: 300;
