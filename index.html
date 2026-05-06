@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cascabel.io</title>
+    <!-- Background color matches your --ink variable to prevent a white flash during redirect -->
+    <style>body { background: #1A1008; }</style>
+
+    <script>
+        (function() {
+            // Check if we've already handled this session to prevent loops
+            if (sessionStorage.getItem('redirected')) return;
+
+            // List of Spanish-speaking country codes
+            const latamAndSpain = [
+                'MX', 'ES', 'AR', 'CL', 'CO', 'PE', 'VE', 'EC', 
+                'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 
+                'CR', 'PA', 'UY'
+            ];
+
+            // Detect location via IP
+            fetch('https://ipapi.co/json/')
+                .then(res => res.json())
+                .then(data => {
+                    sessionStorage.setItem('redirected', 'true');
+                    
+                    if (latamAndSpain.includes(data.country_code)) {
+                        window.location.replace("/es/index.html");
+                    } else {
+                        window.location.replace("/en/index.html");
+                    }
+                })
+                .catch(() => {
+                    // Fail-safe: If API fails, default to English
+                    window.location.replace("/en/index.html");
+                });
+        })();
+    </script>
+
+    <!-- Meta refresh as a ultimate fallback (after 3 seconds) -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/index.html">
+    </noscript>
+</head>
+<body>
+</body>
+</html>
