@@ -12,15 +12,16 @@
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="../assets/logo.png" class="nav-logo-img">
+    <img src="../assets/logo.png" alt="Cascabel Logo" class="nav-logo-img">
     <span class="nav-logo-word">cascabel</span>
     <span class="nav-logo-dot">.io</span>
   </a>
   <ul class="nav-links">
     <li><a href="#services" class="active">Services</a></li>
-    <li><a href="#cases">Case Studies</a></li>
+    <li><a href="#cases">Success Stories</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -29,76 +30,423 @@
 
 <main class="site-content">
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-texture"></div>
-  <p class="hero-badge">Artificial Intelligence · United States</p>
+  <p class="hero-badge">Artificial Intelligence · Mexico</p>
   <h1 class="hero-title">
     Listen to what your<br>
-    data is trying to <em>tell you.</em>
+    data has to <em>say.</em>
   </h1>
   <p class="hero-sub">
-    We transform operations with AI built for how real companies actually run.
+    We transform the operations of Mexican companies with AI built for how Mexico actually works.
   </p>
   <div class="hero-actions">
     <a href="#services" class="btn-primary">View services</a>
-    <a href="#cases" class="btn-ghost">Case studies</a>
+    <a href="#cases" class="btn-ghost">Success stories</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
   </div>
 </section>
 
+<!-- INTRO STATS -->
 <div class="intro">
-  <div class="intro-stat">
+  <div class="intro-stat reveal">
     <div class="stat-num">+20</div>
-    <div class="stat-label">active deployments</div>
-    <div class="stat-sub">across manufacturing, real estate and logistics</div>
+    <div class="stat-label">active implementations</div>
+    <div class="stat-sub">in manufacturing, real estate, and logistics</div>
   </div>
   <div class="intro-divider"></div>
-  <div class="intro-stat">
+  <div class="intro-stat reveal reveal-delay-1">
     <div class="stat-num">3.1×</div>
-    <div class="stat-label">average ROI (year one)</div>
+    <div class="stat-label">average first-year ROI</div>
+    <div class="stat-sub">across clients with 6+ months of operation</div>
   </div>
   <div class="intro-divider"></div>
-  <div class="intro-stat">
+  <div class="intro-stat reveal reveal-delay-2">
     <div class="stat-num">7</div>
     <div class="stat-label">months to payback</div>
+    <div class="stat-sub">average return on investment time</div>
   </div>
 </div>
 
+<!-- SERVICES -->
 <section class="services" id="services">
-  <p class="section-badge">Services</p>
-  <h2 class="section-title">Problems we’ve <em>solved</em> with AI</h2>
+  <p class="section-badge reveal">Our services</p>
+  <h2 class="section-title reveal reveal-delay-1">Problems we <em>solved</em> with AI</h2>
+  <p class="section-body reveal reveal-delay-2">We start where it hurts and scale when you're ready.</p>
 
   <div class="services-grid">
 
-    <div class="service-card">
+    <div class="service-card reveal">
       <div class="service-num">01</div>
-      <h3 class="service-name">Sentinel<br>Predictive maintenance</h3>
-      <p class="service-desc">Detect failures before they happen.</p>
-      <a href="../case-sentinel.html" class="service-link">Learn more →</a>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/><path d="M13 3v4l2-2 2 2V3"/></svg>
+      </div>
+      <h3 class="service-name">Sentinel<br>Predictive Maintenance</h3>
+      <p class="service-desc">IoT sensors + ML models that detect failures in CNC machinery, presses, and lathes 48–96 hours before they happen. Turn reactive maintenance into a competitive advantage.</p>
+      <div class="service-tags">
+        <span class="tag">Manufacturing</span>
+        <span class="tag">IoT</span>
+        <span class="tag">Failure Prediction</span>
+      </div>
+      <a href="#contact" class="service-link">Learn more →</a>
     </div>
 
-    <div class="service-card">
+    <div class="service-card reveal reveal-delay-1">
       <div class="service-num">02</div>
-      <h3 class="service-name">Mercado<br>Pricing intelligence</h3>
-      <p class="service-desc">Know when to buy materials.</p>
-      <a href="../case-mercado.html" class="service-link">Learn more →</a>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3 class="service-name">Market<br>Price Intelligence</h3>
+      <p class="service-desc">Monitoring CME futures, spot prices, and local suppliers with correlation and time-lag models calibrated for Mexico. Know when to buy steel, aluminum, or any commodity before the competition.</p>
+      <div class="service-tags">
+        <span class="tag">Purchasing</span>
+        <span class="tag">Commodities</span>
+        <span class="tag">Forecasting</span>
+      </div>
+      <a href="#contact" class="service-link">Learn more →</a>
     </div>
 
-    <div class="service-card">
+    <div class="service-card reveal reveal-delay-2">
       <div class="service-num">03</div>
-      <h3 class="service-name">Concilia<br>Financial reconciliation</h3>
-      <p class="service-desc">Close faster, eliminate errors.</p>
-      <a href="../case-concilia.html" class="service-link">Learn more →</a>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3 class="service-name">Concilia<br>Financial Reconciliation</h3>
+      <p class="service-desc">Automated reconciliation of payments, CFDI (tax invoices), and bank statements for real estate managers. The monthly close that used to take 15 days now takes 4 — and owners receive their statements by day 5.</p>
+      <div class="service-tags">
+        <span class="tag">Real Estate</span>
+        <span class="tag">CFDI / SAT</span>
+        <span class="tag">Reconciliation</span>
+      </div>
+      <a href="#contact" class="service-link">Learn more →</a>
+    </div>
+
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-num">04</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" stroke-dasharray="4 2"/><path d="M3 9h18M9 3v18"/></svg>
+      </div>
+      <h3 class="service-name">Demand<br>Advanced Planning</h3>
+      <p class="service-desc">Demand projection at 4, 8, and 12 weeks based on customer history, AMIA data, and market signals. Respond faster than the competition when order peaks arrive.</p>
+      <div class="service-tags">
+        <span class="tag">Logistics</span>
+        <span class="tag">Forecasting</span>
+        <span class="tag">AMIA</span>
+      </div>
+      <a href="#contact" class="service-link">Learn more →</a>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-num">05</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+      </div>
+      <h3 class="service-name">Board<br>Real-Time Operations</h3>
+      <p class="service-desc">A unified dashboard connecting machinery, stock, finance, and demand in a single view. For executives who need clarity, not more Monday morning Excel reports.</p>
+      <div class="service-tags">
+        <span class="tag">Dashboard</span>
+        <span class="tag">Real-time</span>
+        <span class="tag">KPIs</span>
+      </div>
+      <a href="#contact" class="service-link">Learn more →</a>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-num">06</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3 class="service-name">Adoption<br>AI Consulting</h3>
+      <p class="service-desc">Digital maturity audits, tool selection, and team training for companies that don't know where to start. The most important first step is an honest diagnosis.</p>
+      <div class="service-tags">
+        <span class="tag">Consulting</span>
+        <span class="tag">Diagnosis</span>
+        <span class="tag">Training</span>
+      </div>
+      <a href="#contact" class="service-link">Learn more →</a>
     </div>
 
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="how" id="process">
+  <p class="section-badge reveal">How we work</p>
+  <h2 class="section-title reveal reveal-delay-1">From <em>diagnosis</em> to results in weeks</h2>
+
+  <div class="how-steps">
+    <div class="step reveal">
+      <div class="step-dot"><span class="step-dot-num">1</span></div>
+      <h3 class="step-title">Diagnosis</h3>
+      <p class="step-body">Diagnostic call to identify your most costly loss vectors. No cost, no obligation.</p>
+    </div>
+    <div class="step reveal reveal-delay-1">
+      <div class="step-dot"><span class="step-dot-num">2</span></div>
+      <h3 class="step-title">Deep Dive</h3>
+      <p class="step-body">Deep analysis of your data, processes, and systems to detect real inefficiencies and high-impact opportunities. Here we define what to build, why, and in what order.</p>
+    </div>
+    <div class="step reveal reveal-delay-2">
+      <div class="step-dot"><span class="step-dot-num">3</span></div>
+      <h3 class="step-title">Connection & Validation</h3>
+      <p class="step-body">Integration with your existing systems. The system runs in parallel with your current operation. No data migration. Your team validates until they trust it.</p>
+    </div>
+    <div class="step reveal reveal-delay-3">
+      <div class="step-dot"><span class="step-dot-num">4</span></div>
+      <h3 class="step-title">Go-live</h3>
+      <p class="step-body">First autonomous cycle. First ROI review. We scale when the numbers justify it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases" id="cases">
+  <p class="section-badge">Success Stories</p>
+  <h2 class="section-title">Real operational results</h2>
+
+  <div class="cases-grid">
+
+    <!-- CASE 1: Sentinel -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-industry">Manufacturing</div>
+        <div class="case-name">Sentinel</div>
+        <div class="case-sub">Predictive maintenance with IoT + ML</div>
+      </div>
+
+      <div class="case-metrics">
+        <div>
+          <div class="case-metric-val">~70%</div>
+          <div class="case-metric-label">fewer unscheduled failures</div>
+        </div>
+        <div>
+          <div class="case-metric-val">+12pt</div>
+          <div class="case-metric-label">OEE over benchmark</div>
+        </div>
+        <div>
+          <div class="case-metric-val">48–72h</div>
+          <div class="case-metric-label">failure lead time</div>
+        </div>
+      </div>
+
+      <div class="case-footer">
+        <span class="case-quote">“If they had only told us sooner...”</span>
+        <a href="case-sentinel.html" class="case-read">Read case study →</a>
+      </div>
+    </div>
+
+    <!-- CASE 2: Market -->
+    <div class="case-card light">
+      <div class="case-header">
+        <div class="case-industry">Manufacturing</div>
+        <div class="case-name">Market</div>
+        <div class="case-sub">Price and purchasing intelligence</div>
+      </div>
+
+      <div class="case-metrics">
+        <div>
+          <div class="case-metric-val">~25%</div>
+          <div class="case-metric-label">better material pricing</div>
+        </div>
+        <div>
+          <div class="case-metric-val">−40%</div>
+          <div class="case-metric-label">dead stock reduction</div>
+        </div>
+        <div>
+          <div class="case-metric-val">3–5 weeks</div>
+          <div class="case-metric-label">price hike anticipation</div>
+        </div>
+      </div>
+
+      <div class="case-footer">
+        <span class="case-quote">“We were buying at the worst time...”</span>
+        <a href="case-market.html" class="case-read">Read case study →</a>
+      </div>
+    </div>
+
+    <!-- CASE 3: Concilia -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-industry">Real Estate</div>
+        <div class="case-name">Concilia</div>
+        <div class="case-sub">Automated payment reconciliation</div>
+      </div>
+
+      <div class="case-metrics">
+        <div>
+          <div class="case-metric-val">~65%</div>
+          <div class="case-metric-label">less time on monthly close</div>
+        </div>
+        <div>
+          <div class="case-metric-val">−90%</div>
+          <div class="case-metric-label">errors eliminated</div>
+        </div>
+        <div>
+          <div class="case-metric-val">3 months</div>
+          <div class="case-metric-label">ROI</div>
+        </div>
+      </div>
+
+      <div class="case-footer">
+        <span class="case-quote">“Closing is no longer chaos.”</span>
+        <a href="case-concilia.html" class="case-read">Read case study →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BIG QUOTE -->
+<div class="quote-section">
+  <p class="big-quote reveal">"The biggest risk is not implementing the technology. The biggest risk is continuing to operate as you do today while the competition is already listening to what their data has to say."</p>
+  <p class="quote-attr reveal reveal-delay-1">— cascabel.io, Strategy Team</p>
+</div>
+
+<!-- CTA / CONTACT -->
 <section class="cta-section" id="contact">
-  <h2>Is your operation ready to <em>listen</em>?</h2>
-  <p>We’ll show you exactly where you’re losing money — and how to recover it.</p>
+  <div>
+    <p class="section-badge" style="color:var(--chile);">Let's talk</p>
+    <h2 class="cta-title reveal">Is your company ready to <em>listen</em>?</h2>
+    <p class="cta-body reveal reveal-delay-1">The initial diagnosis is free and without obligation. In 10 days, we'll tell you exactly how much you're losing — and how to help you recover it.</p>
+    <div style="margin-top:2rem; display:flex; flex-direction:column; gap:0.5rem;">
+      <div style="font-size:0.78rem; color:var(--maguey);">contact@cascabel.io</div>
+      <div style="font-size:0.78rem; color:var(--maguey);">cascabel.io · Mexico</div>
+    </div>
+  </div>
+
+<form 
+  id="contact-form"
+  class="cta-form reveal reveal-delay-1" 
+  action="https://formspree.io/f/mvzdaqvb" 
+  method="POST"
+>
+
+  <div class="form-row">
+    <input class="form-input" type="text" name="name" placeholder="Name" required>
+    <input class="form-input" type="text" name="company" placeholder="Company">
+  </div>
+
+  <input class="form-input" type="email" name="email" placeholder="Email address" required>
+
+  <input class="form-input" type="tel" name="phone" placeholder="Phone (optional)">
+
+  <select class="form-select" name="area" required>
+    <option value="" disabled selected>In which area do you need help?</option>
+    <option>Predictive Maintenance (Sentinel)</option>
+    <option>Price Intelligence (Market)</option>
+    <option>Financial Reconciliation (Concilia)</option>
+    <option>Demand Planning</option>
+    <option>I'm not sure — I want the diagnosis</option>
+  </select>
+
+  <input type="hidden" name="_subject" value="New Lead - Cascabel Website">
+
+  <div>
+    <button class="form-submit" type="submit">
+      Request free diagnosis →
+    </button>
+    <p class="form-note">We respond in less than 24 business hours.</p>
+  </div>
+
+</form>
+
+<div id="success-message" style="display:none; text-align:center; margin-top:20px;">
+  <h2>Thank you!</h2>
+  <p>Our team will contact you shortly.</p>
+</div>
 </section>
 
 </main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">cascabel<span>.io</span></div>
+        <div class="footer-tagline">Listen to what your data has to say.</div>
+      </div>
+
+      <div class="footer-cols">
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="#">Sentinel — Predictive Maintenance</a></li>
+            <li><a href="#">Market — Price Intelligence</a></li>
+            <li><a href="#">Concilia — Reconciliation</a></li>
+            <li><a href="#">Demand — Planning</a></li>
+            <li><a href="#">Adoption — Consulting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <ul class="footer-links">
+            <li><a href="#">Manufacturing</a></li>
+            <li><a href="#">Management</a></li>
+            <li><a href="#">Logistics & Distribution</a></li>
+            <li><a href="#">Retail & Commerce</a></li>
+            <li><a href="#">Banking & Financial Services</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 cascabel.io · Mexico · All rights reserved</span>
+      <a href="mailto:contact@cascabel.io" class="footer-email">contact@cascabel.io</a>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+
+<script>
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); 
+
+  const formData = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    form.style.display = "none";
+    successMessage.style.display = "block";
+  } else {
+    alert("There was an error. Please try again.");
+  }
+});
+</script>
 
 </body>
 </html>

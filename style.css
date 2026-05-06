@@ -105,19 +105,25 @@
   .nav-cta:hover { background: var(--terra); }
 
   /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--obsidian);
-    display: flex; flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 20px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 6rem;
-    padding-bottom: 4rem;
-    padding-left: 4rem;
-  }
+.hero {
+  min-height: 100vh;
+  background: var(--obsidian);
+  display: flex; 
+  flex-direction: column;
 
+  /* 1. Force content to the top instead of the bottom */
+  justify-content: flex-start; 
+
+  /* 2. Create a consistent gap from the Nav (64px nav + 60px gap = 124px) */
+  padding-top: 124px; 
+
+  padding-right: 20px;
+  padding-bottom: 4rem;
+  padding-left: 4rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 6rem;
+}
   .hero-texture {
     position: relative; inset: 0;
     background-image:

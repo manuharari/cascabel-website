@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Administración Inmobiliaria — Concilia · cascabel.io</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Material Management — Mercado · cascabel.io</title>
+<!-- Corrected Favicon Path -->
 <link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#1A1008;--chile:#C4521A;--terra:#E8743B;--maguey:#B8845A;--masa:#FAEEDA;--smoke:#888780;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
 body{font-family:var(--sans);background:var(--ink);color:var(--masa);font-size:15px;line-height:1.6}
 nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-.logo{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--masa);text-decoration:none}
+.logo{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--masa);text-decoration:none;display:flex;align-items:center;gap:4px;}
 .logo span{color:var(--chile)}
 .back{font-size:.72rem;color:var(--smoke);text-decoration:none;letter-spacing:.04em;transition:color .2s}
 .back:hover{color:var(--masa)}
@@ -72,69 +73,67 @@ nav,footer{padding:1rem 1.5rem}
 <div class="hero">
   <div class="fade">
     <div class="tags">
-      <span class="tag">Administración inmobiliaria</span>
-      <span class="tag">Conciliación</span>
-      <span class="tag">Portafolio mixto</span>
+      <span class="tag">Manufacturing</span>
+      <span class="tag">Material Management</span>
+      <span class="tag">Price Intelligence</span>
     </div>
-    <div class="client">Administradora de propiedades · Ciudad de México</div>
-    <h1>El cierre que<br>nadie quería <em>hacer.</em></h1>
-    <p class="hero-sub">Una administradora con más de 200 unidades pasaba semanas enteras cuadrando pagos a mano. Los propietarios esperaban y los errores se acumulaban.</p>
+    <div class="client">Industrial Manufacturing Plant · Northern Mexico</div>
+    <h1>Buying well is<br><em>knowing when.</em></h1>
+    <p class="hero-sub">The plant purchased raw materials when they were already expensive and stored more than necessary because nobody knew what was coming next. Mercado solved both.</p>
   </div>
   <div class="metrics fade fd1">
     <div class="metric">
-      <div class="mval">~65%</div>
-      <div class="mlbl">menos tiempo en el cierre mensual</div>
+      <div class="mval">~25%</div>
+      <div class="mlbl">reduction in effective price paid for key materials</div>
     </div>
     <div class="metric">
-      <div class="mval">−90%</div>
-      <div class="mlbl">errores en estados de cuenta</div>
+      <div class="mval">−40%</div>
+      <div class="mlbl">reduction in stagnant raw material inventory</div>
     </div>
     <div class="metric">
-      <div class="mval">&gt;90%</div>
-      <div class="mlbl">propietarios satisfechos con puntualidad</div>
+      <div class="mval">3–5 wks</div>
+      <div class="mlbl">window of anticipation for price hike signals</div>
     </div>
     <div class="metric">
-      <div class="mval">3 meses</div>
-      <div class="mlbl">para recuperar la inversión</div>
+      <div class="mval">&lt;5 mo</div>
+      <div class="mlbl">return on initial investment</div>
     </div>
   </div>
 </div>
 
 <div class="body">
   <div class="col fade">
-    <div class="col-num">01 — El problema</div>
-    <h2>200 unidades.<br><em>Un Excel que no cuadraba.</em></h2>
-    <p>Cada mes, el equipo comparaba el estado de cuenta bancario descargado a mano contra recibos en PDF, WhatsApp y correo. Sin una fuente de verdad, sin referencias claras de los arrendatarios, sin reglas de cruce consistentes.</p>
-    <p>El cierre llegaba el día 20 o más tarde, con errores que generaban llamadas de reclamo. Dos propietarios ya evaluaban cambiar de administradora.</p>
+    <div class="col-num">01 — The Challenge</div>
+    <h2>Always buying<br><em>at the peak.</em></h2>
+    <p>The procurement department operated reactively: when material levels got low, they bought. No price modeling, no demand forecasting, no market visibility.</p>
+    <p>The result was predictable: frequent purchases during price surges, overstocking when large orders arrived, and tied-up capital that no one could accurately justify.</p>
     <div class="quote">
-      <p>"El día 15 todavía estábamos buscando pagos. Los propietarios llamaban y yo no tenía cómo responderles."</p>
-      <cite>— Directora de Operaciones</cite>
+      <p>"We bought when we ran short, not when it was the right time. It's hard to compete on costs that way."</p>
+      <cite>— Procurement Director</cite>
     </div>
   </div>
   <div class="col fade fd1">
-    <div class="col-num">02 — La solución</div>
-    <h2>Concilia:<br><em>reglas, no intuición.</em></h2>
-    <p>Una app que parte de la realidad: en México no existen integraciones bancarias automáticas. El equipo descarga su estado de cuenta como siempre y lo carga a Concilia. Desde ahí, el sistema hace lo que antes tomaba días.</p>
-    <p><strong>Define las reglas de conciliación</strong> una sola vez — qué arrendatario paga qué monto, en qué fechas, con qué referencias — y las aplica automáticamente cada mes.</p>
-    <p>Para los pagos que no coinciden, <strong>Concilia no solo los marca: sugiere qué hacer</strong> — si asignar al arrendatario más cercano por monto, si generar un aviso de pago incompleto, si mover a una cuenta de pendientes. El equipo decide; la herramienta elimina la duda.</p>
-    <p>Al cierre, genera el estado de cuenta de cada propietario en PDF, listo para enviar.</p>
-    <p>La implementación tomó cinco meses: diagnóstico, construcción, piloto en paralelo con el proceso anterior, y dos cierres reales hasta estabilizar.</p>
+    <div class="col-num">02 — The Solution</div>
+    <h2>Mercado:<br><em>signals before the surge.</em></h2>
+    <p>Mercado continuously monitors the prices of the plant's key materials—international reference markets, local suppliers, historical trends—and crosses them with real consumption and current inventory to produce concrete recommendations.</p>
+    <p><strong>It's not a price dashboard.</strong> It's a system that tells the procurement team what to do: <em>buy now</em>, <em>wait</em>, or <em>hedge with a fixed-price order</em>—providing the reasoning behind every move.</p>
+    <p>It also models future material demand based on the production plan, so procurement and operations finally speak the same language. Implementation took approximately four months, including model calibration with the plant's purchase history.</p>
   </div>
   <div class="col fade fd2">
-    <div class="col-num">03 — El impacto</div>
-    <h2>Del día 20<br>al <em>día 6.</em></h2>
-    <p>El cierre bajó de 12–18 días hábiles a 4–6. Los estados de cuenta llegan en la primera semana del mes. Los errores pasaron de 10–15 por ciclo a 1–2.</p>
-    <p>Los dos propietarios que habían evaluado cambiar de administradora renovaron por dos años adicionales.</p>
+    <div class="col-num">03 — The Impact</div>
+    <h2>Less inventory.<br><em>Better pricing.</em></h2>
+    <p>The effective price paid for primary materials dropped by roughly 25% in the first year—not because suppliers changed, but because the plant started buying at better times.</p>
+    <p>Stagnant inventory fell by nearly 40%, freeing up working capital that previously sat idle in the warehouse. Procurement shifted from reacting to the market to anticipating it.</p>
     <div class="quote">
-      <p>"Antes temía el fin de mes. Ahora el equipo lo cierra en cuatro días y los propietarios ya no llaman a reclamar."</p>
-      <cite>— Directora de Operaciones</cite>
+      <p>"For the first time, procurement and production are aligned. We know what we'll need before we actually need it."</p>
+      <cite>— Operations Director</cite>
     </div>
   </div>
 </div>
 
 <footer>
-  <span class="foot-copy">© 2025 cascabel.io · México</span>
-  <a href="mailto:contacto@cascabel.io" class="foot-cta">Hablar con un experto →</a>
+  <span class="foot-copy">© 2025 cascabel.io · Mexico</span>
+  <a href="mailto:contacto@cascabel.io" class="foot-cta">Talk to an expert →</a>
 </footer>
 
 <script>

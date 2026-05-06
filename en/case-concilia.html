@@ -3,28 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Concilia · Cascabel</title>
-<link rel="stylesheet" href="../style.css">
+<title>Property Management — Concilia · cascabel.io</title>
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1A1008;--chile:#C4521A;--terra:#E8743B;--maguey:#B8845A;--masa:#FAEEDA;--smoke:#888780;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+body{font-family:var(--sans);background:var(--ink);color:var(--masa);font-size:15px;line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--masa);text-decoration:none;display:flex;align-items:center;gap:4px}
+.logo span{color:var(--chile)}
+.back{font-size:.72rem;color:var(--smoke);text-decoration:none;letter-spacing:.04em;transition:color .2s}
+.back:hover{color:var(--masa)}
+
+/* FIXED HERO: Consistent gap and visibility */
+.hero{padding:6rem 3rem 4rem;min-height:70vh;border-bottom:1px solid rgba(255,255,255,.06);display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:flex-start}
+.tags{display:flex;gap:.4rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.tag{font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--chile);border:1px solid rgba(196,82,26,.35);padding:.2rem .65rem;border-radius:2rem}
+.client{font-size:.72rem;color:var(--smoke);letter-spacing:.06em;margin-bottom:.6rem}
+h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);font-weight:500;line-height:1.05;letter-spacing:-.02em;color:var(--masa)}
+h1 em{font-style:italic;color:var(--terra)}
+.hero-sub{font-size:.85rem;font-weight:300;color:var(--maguey);margin-top:1.5rem;line-height:1.7;max-width:420px}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);align-self:flex-start}
+.metric{background:var(--ink);padding:1.5rem 1.25rem}
+.mval{font-family:var(--serif);font-size:2.6rem;font-weight:500;color:var(--chile);line-height:1;letter-spacing:-.02em}
+.mlbl{font-size:.7rem;font-weight:300;color:var(--smoke);margin-top:.3rem;line-height:1.35}
+
+.body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.06)}
+.col{background:var(--ink);padding:2.5rem 2rem}
+.col-num{font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--chile);margin-bottom:.6rem}
+h2{font-family:var(--serif);font-size:1.5rem;font-weight:500;letter-spacing:-.01em;color:var(--masa);margin-bottom:.9rem;line-height:1.2}
+h2 em{font-style:italic;color:var(--terra)}
+p{font-size:.82rem;font-weight:300;color:var(--maguey);line-height:1.75;margin-bottom:.75rem}
+p:last-child{margin-bottom:0}
+p strong{color:var(--masa);font-weight:400}
+
+.quote{border-left:2px solid var(--chile);padding:1rem 1.25rem;margin-top:1rem;background:rgba(196,82,26,.05)}
+.quote p{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--masa);margin-bottom:.4rem;line-height:1.5}
+.quote cite{font-size:.68rem;color:var(--chile);font-style:normal;letter-spacing:.04em}
+
+footer{padding:1.5rem 3rem;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center}
+.foot-copy{font-size:.68rem;color:var(--smoke)}
+.foot-cta{font-size:.72rem;font-weight:500;color:var(--masa);background:var(--chile);padding:.5rem 1.25rem;border-radius:2rem;text-decoration:none;letter-spacing:.04em;transition:background .2s}
+.foot-cta:hover{background:var(--terra)}
+
+.fade{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,0,.2,1),transform .8s cubic-bezier(.2,0,.2,1)}
+.fade.in{opacity:1;transform:none}
+.fd1{transition-delay:.15s}.fd2{transition-delay:.3s}
+
+@media(max-width:768px){
+.hero,.body{grid-template-columns:1fr}
+.metrics{grid-template-columns:1fr 1fr;order:2}
+nav,footer{padding:1rem 1.5rem}
+.hero{padding:4rem 1.5rem 2rem;gap:2rem}
+.col{padding:1.75rem 1.5rem}
+}
+</style>
 </head>
 <body>
-
 <nav>
-  <a href="index.html">cascabel.io</a>
-  <a href="index.html">← Case Studies</a>
+  <a href="index.html" class="logo">
+    <img src="../assets/logo.png" alt="Cascabel Logo" style="height: 1.1rem; width: auto;">
+    <span class="nav-logo-word">cascabel</span><span class="nav-logo-dot" style="color: var(--chile);">.io</span>
+  </a>
+  <a href="index.html" class="back">← Case Studies</a>
 </nav>
 
-<h1>The close<br>no one wanted <em>to do.</em></h1>
-
-<p>
-A real estate operator spent weeks reconciling payments manually.
-Concilia automated it.
-</p>
-
-<div>
-  <strong>~65%</strong> faster close  
-  <strong>−90%</strong> errors  
-  <strong>3 months</strong> ROI  
+<div class="hero">
+  <div class="fade">
+    <div class="tags">
+      <span class="tag">Property Management</span>
+      <span class="tag">Reconciliation</span>
+      <span class="tag">Mixed Portfolio</span>
+    </div>
+    <div class="client">Property Management Firm · Mexico City</div>
+    <h1>The month-end<br>nobody wanted <em>to do.</em></h1>
+    <p class="hero-sub">Managing over 200 units, the team spent entire weeks matching payments by hand. Owners were left waiting while errors continued to mount.</p>
+  </div>
+  <div class="metrics fade fd1">
+    <div class="metric">
+      <div class="mval">~65%</div>
+      <div class="mlbl">reduction in monthly closing time</div>
+    </div>
+    <div class="metric">
+      <div class="mval">−90%</div>
+      <div class="mlbl">errors in financial statements</div>
+    </div>
+    <div class="metric">
+      <div class="mval">&gt;90%</div>
+      <div class="mlbl">owners satisfied with payment punctuality</div>
+    </div>
+    <div class="metric">
+      <div class="mval">3 months</div>
+      <div class="mlbl">to recover the initial investment</div>
+    </div>
+  </div>
 </div>
 
+<div class="body">
+  <div class="col fade">
+    <div class="col-num">01 — The Challenge</div>
+    <h2>200 units.<br><em>One Excel that never balanced.</em></h2>
+    <p>Every month, the team manually compared bank statements against receipts from PDFs, WhatsApp, and email. There was no single source of truth, no clear references from tenants, and no consistent matching rules.</p>
+    <p>The books wouldn't close until the 20th or later, often with errors that triggered complaint calls. Two major owners were already considering switching firms.</p>
+    <div class="quote">
+      <p>"On the 15th, we were still hunting down payments. Owners would call, and I had no way to give them an answer."</p>
+      <cite>— Director of Operations</cite>
+    </div>
+  </div>
+  <div class="col fade fd1">
+    <div class="col-num">02 — The Solution</div>
+    <h2>Concilia:<br><em>Rules, not intuition.</em></h2>
+    <p>An app designed for reality: in Mexico, automatic bank integrations are rare. The team downloads their bank statement as usual and uploads it to Concilia. From there, the system does what used to take days.</p>
+    <p><strong>Define reconciliation rules</strong> once—which tenant pays which amount, on what dates, with which references—and apply them automatically every month.</p>
+    <p>For unmatched payments, <strong>Concilia doesn't just flag them: it suggests what to do</strong>—whether to assign it to the closest tenant by amount, issue an underpayment notice, or move it to a pending account. The team decides; the tool eliminates the guesswork.</p>
+    <p>Upon closing, it generates each owner’s financial statement in PDF, ready to send.</p>
+    <p>Implementation took five months: diagnosis, building, a pilot run alongside the old process, and two live closings until stabilized.</p>
+  </div>
+  <div class="col fade fd2">
+    <div class="col-num">03 — The Impact</div>
+    <h2>From the 20th<br>to <em>day 6.</em></h2>
+    <p>Monthly closing dropped from 12–18 business days to 4–6. Financial statements now reach owners in the first week of the month. Errors fell from 10–15 per cycle to just 1–2.</p>
+    <p>The two owners who had considered leaving renewed their contracts for an additional two years.</p>
+    <div class="quote">
+      <p>"I used to dread the end of the month. Now the team closes it in four days, and the owners no longer call to complain."</p>
+      <cite>— Director of Operations</cite>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="foot-copy">© 2025 cascabel.io · Mexico</span>
+  <a href="mailto:contacto@cascabel.io" class="foot-cta">Talk to an expert →</a>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
