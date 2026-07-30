@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cascabel Sports Intelligence</title>
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- style.css embedded exactly as in the repo blob, so the design never depends on relative paths -->
+<style>
+:root {
+  --obsidian: #1A1008;
+  --chile: #C4521A;
+  --terra: #E8743B;
+  --maguey: #B8845A;
+  --masa: #FAEEDA;
+  --piedra: #F5F2EE;
+  --polvo: #D3D1C7;
+  --humo: #888780;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--masa);
+  color: var(--obsidian);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px;
+  height: 64px;
+  background: var(--obsidian);
+  border-bottom: 1px solid rgba(196,82,26,0.2);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+.nav-logo-img {
+  height: 2.15em;
+  width: auto;
+  object-fit: contain;
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+.nav-logo-word {
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--masa);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.nav-logo-dot {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--chile);
+  letter-spacing: 0.12em;
+  margin: 0;
+  margin-left: -2px;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--maguey);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--masa); }
+.nav-links a.active { color: var(--chile); }
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--masa);
+  background: var(--chile);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--terra); }
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--obsidian);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 124px;
+  padding-right: 20px;
+  padding-bottom: 4rem;
+  padding-left: 4rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 6rem;
+}
+.hero-texture {
+  position: relative; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(196,82,26,0.04) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(196,82,26,0.04) 80px);
+  pointer-events: none;
+}
+.hero-badge {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--chile);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 500;
+  color: var(--masa);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.4s forwards;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--terra);
+}
+.hero-sub {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--maguey);
+  max-width: 480px;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.6s forwards;
+}
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex; gap: 1rem; align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.8s forwards;
+}
+.btn-primary {
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--masa); background: var(--chile);
+  padding: 0.75rem 2rem; border-radius: 2rem;
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--terra); }
+.btn-ghost {
+  font-size: 0.8rem; font-weight: 400;
+  color: var(--maguey); background: transparent;
+  padding: 0.75rem 2rem; border-radius: 2rem;
+  text-decoration: none; letter-spacing: 0.04em;
+  border: 1px solid rgba(184,132,90,0.35);
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--maguey); color: var(--masa); }
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; right: 4rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  opacity: 0; animation: fadeUp 1s 1.2s forwards;
+}
+.hero-scroll span {
+  font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--humo); writing-mode: vertical-rl;
+}
+.scroll-line {
+  width: 1px; height: 40px; background: var(--chile);
+  animation: scrollPulse 2s 1.5s infinite;
+}
+/* ── SECTION COMMON ── */
+section { padding: 6rem 0; }
+section {
+  position: relative;
+  display: block;
+  padding: 6rem 0
+}
+section + section {
+  margin-top: 4rem;
+}
+.section-badge {
+  font-size: 0.65rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--chile); margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--obsidian);
+  max-width: 600px;
+}
+.section-title em { font-style: italic; color: var(--chile); }
+.section-body {
+  font-size: 0.95rem; font-weight: 300;
+  color: #5F5E5A; line-height: 1.8;
+  max-width: 520px; margin-top: 1.25rem;
+}
+/* ── INTRO STRIP ── */
+.intro {
+  background: var(--piedra);
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+}
+.intro-stat {
+  padding: 1.5rem 3rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
+}
+.intro-stat:first-child { padding-left: 0; }
+.intro-stat:last-child { padding-right: 0; }
+.intro-divider {
+  background: var(--polvo);
+  align-self: stretch;
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 3rem; font-weight: 500;
+  color: var(--chile); line-height: 1;
+}
+.stat-label {
+  font-size: 0.8rem; font-weight: 400;
+  color: var(--obsidian); line-height: 1.4;
+}
+.stat-sub {
+  font-size: 0.7rem; font-weight: 300;
+  color: var(--humo); margin-top: 0.15rem;
+}
+/* ── SERVICES ── */
+.services { background: var(--obsidian);
+  padding-left: 4rem;
+  padding-right: 5.5rem;
+}
+.services .section-title { color: var(--masa); }
+.services .section-body { color: var(--maguey); }
+.services-grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(196,82,26,0.15);
+}
+.service-card {
+  background: var(--obsidian);
+  padding: 3rem 2.5rem;
+  display: flex; flex-direction: column;
+  gap: 1.25rem;
+  transition: background 0.3s;
+  cursor: default;
+}
+.service-card:hover { background: #221408; }
+.service-num {
+  font-size: 0.65rem; font-weight: 500;
+  letter-spacing: 0.16em; color: var(--chile);
+}
+.service-icon {
+  width: 40px; height: 40px;
+  border: 1px solid rgba(196,82,26,0.4);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.service-icon svg { width: 20px; height: 20px; stroke: var(--chile); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.service-name {
+  font-family: var(--serif);
+  font-size: 1.6rem; font-weight: 500;
+  color: var(--masa); line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.service-desc {
+  font-size: 0.85rem; font-weight: 300;
+  color: var(--maguey); line-height: 1.75;
+  flex: 1;
+}
+.service-tags {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.tag {
+  font-size: 0.65rem; font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--chile);
+  border: 1px solid rgba(196,82,26,0.3);
+  padding: 0.2rem 0.65rem;
+  border-radius: 2rem;
+}
+.service-link {
+  font-size: 0.75rem; font-weight: 500;
+  color: var(--terra); letter-spacing: 0.04em;
+  text-decoration: none; margin-top: 0.5rem;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  transition: gap 0.2s;
+}
+.service-link:hover { gap: 0.7rem; }
+/* ── HOW IT WORKS ── */
+.how { background: var(--masa);
+  padding-left: 4rem;
+  padding-right: 5.5rem;
+}
+.how-steps {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.how-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px; left: calc(12.5% + 1rem); right: calc(12.5% + 1rem);
+  height: 1px;
+  background: var(--polvo);
+  z-index: 0;
+}
+.step {
+  padding: 0 2rem 0 0;
+  position: relative; z-index: 1;
+}
+.step-dot {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--polvo);
+  background: var(--piedra);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.step-dot-num {
+  font-family: var(--serif);
+  font-size: 1.4rem; font-weight: 500;
+  color: var(--chile);
+}
+.step-title {
+  font-family: var(--serif);
+  font-size: 1.2rem; font-weight: 500;
+  color: var(--obsidian); margin-bottom: 0.5rem;
+}
+.step-body {
+  font-size: 0.82rem; font-weight: 300;
+  color: var(--humo); line-height: 1.75;
+}
+/* ── CASES ── */
+.cases { background: var(--piedra);
+  padding-left: 4rem;
+}
+.cases-grid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-right: 4rem;
+  padding: 1rem;
+}
+.case-card {
+  background: var(--obsidian);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.case-card.light {
+  background: white;
+  border: 1px solid var(--polvo);
+}
+.case-header {
+  padding: 2.5rem 2.5rem 2rem;
+  border-bottom: 1px solid rgba(196,82,26,0.15);
+}
+.case-card.light .case-header {
+  border-bottom-color: var(--polvo);
+}
+.case-industry {
+  font-size: 0.65rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--chile); margin-bottom: 0.75rem;
+}
+.case-name {
+  font-family: var(--serif);
+  font-size: 1.8rem; font-weight: 500;
+  color: var(--masa); line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.case-card.light .case-name { color: var(--obsidian); }
+.case-sub {
+  font-size: 0.82rem; font-weight: 300;
+  color: var(--maguey); margin-top: 0.5rem;
+}
+.case-card.light .case-sub { color: var(--humo); }
+.case-metrics {
+  padding: 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+}
+.case-metric-val {
+  font-family: var(--serif);
+  font-size: 2.2rem; font-weight: 500;
+  color: var(--chile); line-height: 1;
+}
+.case-metric-label {
+  font-size: 0.72rem; font-weight: 300;
+  color: var(--maguey); margin-top: 0.25rem; line-height: 1.4;
+}
+.case-card.light .case-metric-label { color: var(--humo); }
+.case-footer {
+  padding: 1.25rem 2.5rem;
+  border-top: 1px solid rgba(196,82,26,0.12);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.case-card.light .case-footer { border-top-color: var(--polvo); }
+.case-quote {
+  font-size: 0.78rem; font-style: italic;
+  color: var(--maguey); max-width: 320px; line-height: 1.5;
+}
+.case-card.light .case-quote { color: var(--humo); }
+.case-read {
+  font-size: 0.72rem; font-weight: 500;
+  color: var(--chile); text-decoration: none; white-space: nowrap;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+.case-read:hover { opacity: 0.7; }
+/* ── QUOTE ── */
+.quote-section {
+  background: var(--chile);
+  padding: 5rem 4rem;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 1.5rem;
+}
+.big-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 500; font-style: italic;
+  color: var(--masa);
+  max-width: 820px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.quote-attr {
+  font-size: 0.78rem; font-weight: 400;
+  color: rgba(250,238,218,0.7);
+  letter-spacing: 0.04em;
+}
+/* ── PRICING ── */
+.pricing { background: var(--masa); }
+.pricing-grid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--polvo);
+  border: 1px solid var(--polvo);
+}
+.pricing-card {
+  background: var(--masa);
+  padding: 2.5rem 2rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+  position: relative;
+}
+.pricing-card.featured {
+  background: var(--obsidian);
+}
+.pricing-badge {
+  position: absolute; top: -1px; left: 2rem;
+  font-size: 0.6rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--masa);
+  background: var(--chile);
+  padding: 0.2rem 0.75rem;
+  border-radius: 0 0 4px 4px;
+}
+.pricing-tier {
+  font-size: 0.65rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--chile);
+}
+.pricing-name {
+  font-family: var(--serif);
+  font-size: 1.8rem; font-weight: 500;
+  color: var(--obsidian); line-height: 1.1;
+}
+.pricing-card.featured .pricing-name { color: var(--masa); }
+.pricing-desc {
+  font-size: 0.82rem; font-weight: 300;
+  color: var(--humo); line-height: 1.7;
+}
+.pricing-card.featured .pricing-desc { color: var(--maguey); }
+.pricing-items {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 0.6rem;
+  flex: 1;
+}
+.pricing-items li {
+  font-size: 0.82rem; font-weight: 300;
+  color: #5F5E5A;
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  line-height: 1.5;
+}
+.pricing-card.featured .pricing-items li { color: var(--maguey); }
+.pricing-items li::before {
+  content: '';
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--chile);
+  margin-top: 0.55em; flex-shrink: 0;
+}
+.pricing-cta {
+  font-size: 0.78rem; font-weight: 500;
+  color: var(--masa); background: var(--chile);
+  border: none; padding: 0.65rem 1.5rem;
+  border-radius: 2rem; cursor: pointer;
+  letter-spacing: 0.04em; text-align: center;
+  text-decoration: none; display: block;
+  transition: background 0.2s;
+}
+.pricing-cta:hover { background: var(--terra); }
+.pricing-cta.ghost {
+  background: transparent; color: var(--obsidian);
+  border: 1px solid var(--polvo);
+}
+.pricing-cta.ghost:hover { border-color: var(--chile); color: var(--chile); }
+/* ── CTA SECTION ── */
+.cta-section {
+  background: var(--obsidian);
+  padding: 6rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  color: var(--masa);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.cta-title em { font-style: italic; color: var(--terra); }
+.cta-body {
+  font-size: 0.9rem; font-weight: 300;
+  color: var(--maguey); line-height: 1.8;
+  margin-top: 1.25rem;
+}
+.cta-form {
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.form-input {
+  background: rgba(250,238,218,0.06);
+  border: 1px solid rgba(250,238,218,0.12);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: var(--masa);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input::placeholder { color: rgba(184,132,90,0.5); }
+.form-input:focus { border-color: rgba(196,82,26,0.5); }
+.form-select {
+  background: rgba(250,238,218,0.06);
+  border: 1px solid rgba(250,238,218,0.12);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: var(--maguey);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 300;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+}
+.form-submit {
+  background: var(--chile);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.85rem 2rem;
+  color: var(--masa);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+.form-submit:hover { background: var(--terra); }
+.form-note {
+  font-size: 0.72rem; font-weight: 300;
+  color: var(--humo); margin-top: 0.25rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+/* ── FOOTER ── */
+footer {
+  background: #120C05;
+  padding: 3rem 0 2rem;
+  border-top: 1px solid rgba(196,82,26,0.2);
+  width: 100%;
+}
+.footer-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  box-sizing: border-box;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 2rem;
+  gap: 4rem;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  flex: 1;
+  max-width: 850px;
+}
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1.6rem; font-weight: 500;
+  color: var(--masa); letter-spacing: -0.01em;
+}
+.footer-logo span { color: var(--chile); }
+.footer-tagline {
+  font-size: 0.75rem; color: var(--maguey);
+  margin-top: 0.25rem; font-style: italic;
+}
+.footer-col-title {
+  font-size: 0.65rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--chile); margin-bottom: 0.75rem;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0rem; }
+.footer-links a {
+  font-size: 0.8rem; font-weight: 300;
+  color: var(--maguey); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--masa); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 1rem;
+}
+.footer-copy {
+  font-size: 0.72rem; color: var(--humo); font-weight: 300;
+}
+.footer-email {
+  font-size: 0.78rem; color: var(--chile);
+  text-decoration: none; font-weight: 400;
+  transition: opacity 0.2s;
+}
+.footer-email:hover { opacity: 0.7; }
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.4; transform: scaleY(0.7); }
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+@media (max-width: 768px) {
+  .footer-top { flex-direction: column; gap: 2rem; }
+  .footer-cols { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+@media (max-width: 768px) {
+  nav, .hero, section, .quote-section, .cta-section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  nav { padding: 0 20px !important; }
+  .nav-links { display: none; }
+  .hero { padding-bottom: 3rem !important; }
+  .hero-title { font-size: 2.4rem; }
+  .hero-sub { font-size: 0.9rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-scroll { display: none; }
+  .intro { grid-template-columns: 1fr; padding: 2rem 20px; }
+  .intro-divider { display: none; }
+  .intro-stat { padding: 1rem 0; }
+  .services-grid { grid-template-columns: 1fr; }
+  .how-steps { grid-template-columns: 1fr; gap: 2rem; }
+  .how-steps::before { display: none; }
+  .step { padding: 0; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .case-metrics { grid-template-columns: 1fr; }
+  .case-footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .cta-section { grid-template-columns: 1fr; gap: 2rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-submit { width: 100%; }
+  .footer-top { flex-direction: column; gap: 2rem; }
+  .footer-cols { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+/* ── Page-only tweak: 4 modules in 2 columns instead of 3 ── */
+.modules-grid { grid-template-columns: repeat(2, 1fr); }
+.module-list { list-style: none; margin-top: 0.75rem; }
+@media (max-width: 900px) { .modules-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <img src="../../assets/logo.png" alt="Cascabel Logo" class="nav-logo-img">
+    <span class="nav-logo-word">cascabel</span>
+    <span class="nav-logo-dot">.io</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="#philosophy">Sports Intelligence</a></li>
+    <li><a href="#modules" class="active">Modules</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Talk to an expert →</a>
+</nav>
+
+<main class="site-content">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-texture"></div>
+    <p class="hero-badge">Cascabel Sports Intelligence · Professional Football</p>
+    <h1 class="hero-title">
+      Turn match data<br>
+      into <em>decisions.</em>
+    </h1>
+    <p class="hero-sub">
+      Cascabel Sports Intelligence transforms fragmented football data into decisions that coaching staffs, analysts, scouts and executives can act on — without replacing the way your club already works.
+    </p>
+    <div class="hero-actions">
+      <a href="#modules" class="btn-primary">View modules</a>
+      <a href="#process" class="btn-ghost">How we work</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- INTRO STATS -->
+  <div class="intro">
+    <div class="intro-stat reveal">
+      <div class="stat-num">4</div>
+      <div class="stat-label">intelligence modules</div>
+      <div class="stat-sub">tactical, recruitment, performance and executive</div>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-stat reveal reveal-delay-1">
+      <div class="stat-num">1</div>
+      <div class="stat-label">single environment</div>
+      <div class="stat-sub">instead of five disconnected systems</div>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-stat reveal reveal-delay-2">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">adapted to your methodology</div>
+      <div class="stat-sub">every implementation fits the club, not the other way around</div>
+    </div>
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <section class="services" id="philosophy" style="padding-bottom:2rem;">
+    <p class="section-badge reveal">Sports Intelligence</p>
+    <h2 class="section-title reveal reveal-delay-1">We don't replace <em>your</em> methodology.</h2>
+    <p class="section-body reveal reveal-delay-2">
+      Every club is different. Every coaching staff thinks about the game differently. Cascabel Sports Intelligence doesn't impose a model — it augments the one you already have with artificial intelligence, advanced analytics and decision-support tools built around how your club actually operates. It's a division of cascabel.io, not a different company or a different brand: the same way of working, applied to professional football.
+    </p>
+  </section>
+
+  <!-- MODULES -->
+  <section class="services" id="modules">
+    <p class="section-badge reveal">Four intelligence modules</p>
+    <h2 class="section-title reveal reveal-delay-1">Start with <em>one.</em> Scale when you're ready.</h2>
+    <p class="section-body reveal reveal-delay-2">A modular platform: every club implements only what it needs.</p>
+
+    <div class="services-grid modules-grid">
+
+      <!-- MODULE 1: Tactical -->
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        </div>
+        <h3 class="service-name">Tactical Intelligence<br>See the game before it happens.</h3>
+        <p class="service-desc">Instead of manually reviewing dozens of hours of video and scattered statistics, your coaching staff receives structured tactical insights that accelerate preparation and improve decision making.</p>
+        <ul class="pricing-items module-list">
+          <li>Match Brief</li>
+          <li>Opponent Analysis</li>
+          <li>Match Insights</li>
+          <li>Game Plan</li>
+          <li>Tactical Simulator</li>
+          <li>Automated reports</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag">Coaching staff</span>
+          <span class="tag">Analysts</span>
+        </div>
+      </div>
+
+      <!-- MODULE 2: Recruitment -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3 class="service-name">Recruitment Intelligence<br>Find the right player.</h3>
+        <p class="service-desc">Combines scouting observations, statistical profiles and club-specific requirements to identify players who actually fit your football philosophy — not just the available player.</p>
+        <ul class="pricing-items module-list">
+          <li>Player search</li>
+          <li>Similarity — comparable players</li>
+          <li>Recruitment dashboard</li>
+          <li>Shortlists</li>
+          <li>Positional comparisons</li>
+          <li>Market intelligence</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag">Sporting director</span>
+          <span class="tag">Scouting</span>
+        </div>
+      </div>
+
+      <!-- MODULE 3: Performance -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3 class="service-name">Performance Intelligence<br>Optimize without adding risk.</h3>
+        <p class="service-desc">GPS data, training loads, medical reports and fitness testing consolidated into a single environment where technical and performance staff can spot trends before they become injuries.</p>
+        <ul class="pricing-items module-list">
+          <li>Training workload</li>
+          <li>Workload monitoring</li>
+          <li>Physical KPIs</li>
+          <li>Medical integration</li>
+          <li>Recovery tracking</li>
+          <li>Individual development plans</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag">Performance staff</span>
+          <span class="tag">Medical staff</span>
+        </div>
+      </div>
+
+      <!-- MODULE 4: Executive -->
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-num">04</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="service-name">Executive Intelligence<br>Football decisions with business vision.</h3>
+        <p class="service-desc">Instead of opening five different systems, leadership gets a unified view of sporting performance, recruitment activity, academy development and operational club KPIs.</p>
+        <ul class="pricing-items module-list">
+          <li>Club dashboard</li>
+          <li>Financial KPIs</li>
+          <li>Academy</li>
+          <li>Scouting</li>
+          <li>Squad valuation</li>
+          <li>Board reporting</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag">Ownership</span>
+          <span class="tag">Executives</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="how" id="process">
+    <p class="section-badge reveal">How we work</p>
+    <h2 class="section-title reveal reveal-delay-1">From <em>diagnosis</em> to implementation in weeks</h2>
+    <div class="how-steps">
+      <div class="step reveal">
+        <div class="step-dot"><span class="step-dot-num">1</span></div>
+        <h3 class="step-title">Diagnosis</h3>
+        <p class="step-body">A diagnosis call with your coaching staff or sporting director to identify which module solves the most urgent problem. No cost, no commitment.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-dot"><span class="step-dot-num">2</span></div>
+        <h3 class="step-title">Deep Dive</h3>
+        <p class="step-body">A deep review of your data, workflow and current methodology — video, GPS, scouting, club ERP — to define what to build, why, and in what order.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-dot"><span class="step-dot-num">3</span></div>
+        <h3 class="step-title">Integration &amp; validation</h3>
+        <p class="step-body">Integration with your existing systems. The module runs in parallel with your current operation. Your staff validates until they trust it.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-dot"><span class="step-dot-num">4</span></div>
+        <h3 class="step-title">Go-live</h3>
+        <p class="step-body">First autonomous cycle within your competitive calendar. We scale to more modules when the club is ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES / WHO USES IT -->
+  <section class="cases" id="use-cases">
+    <p class="section-badge reveal">Built for every area of the club</p>
+    <h2 class="section-title reveal reveal-delay-1">A module for every decision</h2>
+    <div class="cases-grid">
+
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div class="case-industry">Tactical Intelligence</div>
+          <div class="case-name">Coaching staff</div>
+          <div class="case-sub">Coaches and video analysts</div>
+        </div>
+        <div class="case-metrics">
+          <div>
+            <div class="case-metric-val">Match Brief</div>
+            <div class="case-metric-label">before every match</div>
+          </div>
+          <div>
+            <div class="case-metric-val">Game Plan</div>
+            <div class="case-metric-label">structured by opponent</div>
+          </div>
+          <div>
+            <div class="case-metric-val">Simulator</div>
+            <div class="case-metric-label">for tactical scenarios</div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <span class="case-quote">"Less time in video, more tactical clarity."</span>
+        </div>
+      </div>
+
+      <div class="case-card light reveal reveal-delay-1">
+        <div class="case-header">
+          <div class="case-industry">Recruitment Intelligence</div>
+          <div class="case-name">Sporting direction</div>
+          <div class="case-sub">Scouts and sporting directors</div>
+        </div>
+        <div class="case-metrics">
+          <div>
+            <div class="case-metric-val">Similarity</div>
+            <div class="case-metric-label">comparable players</div>
+          </div>
+          <div>
+            <div class="case-metric-val">Shortlists</div>
+            <div class="case-metric-label">by profile and position</div>
+          </div>
+          <div>
+            <div class="case-metric-val">Dashboard</div>
+            <div class="case-metric-label">for recruitment</div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <span class="case-quote">"The system never replaces the scout — it makes them more effective."</span>
+        </div>
+      </div>
+
+      <div class="case-card reveal reveal-delay-2">
+        <div class="case-header">
+          <div class="case-industry">Performance Intelligence</div>
+          <div class="case-name">Performance staff</div>
+          <div class="case-sub">Fitness coaches and medical staff</div>
+        </div>
+        <div class="case-metrics">
+          <div>
+            <div class="case-metric-val">Workload</div>
+            <div class="case-metric-label">monitored by session</div>
+          </div>
+          <div>
+            <div class="case-metric-val">KPIs</div>
+            <div class="case-metric-label">physical, in real time</div>
+          </div>
+          <div>
+            <div class="case-metric-val">Integration</div>
+            <div class="case-metric-label">with medical staff</div>
+          </div>
+        </div>
+        <div class="case-footer">
+          <span class="case-quote">"Trends visible before they become an injury."</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BIG QUOTE -->
+  <div class="quote-section">
+    <p class="big-quote reveal">"The biggest risk isn't implementing sports intelligence. The biggest risk is still making football decisions without it, while other clubs already are."</p>
+    <p class="quote-attr reveal reveal-delay-1">— Cascabel Sports Intelligence, Strategy Team</p>
+  </div>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta-section" id="contact">
+    <div>
+      <p class="section-badge" style="color:var(--chile);">Let's talk</p>
+      <h2 class="cta-title reveal">Is your club ready to <em>listen</em> to its data?</h2>
+      <p class="cta-body reveal reveal-delay-1">Tell us which area you need help with — tactical, recruitment, performance or executive — and we'll show you what the module would look like inside your club.</p>
+      <div style="margin-top:2rem; display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="font-size:0.78rem; color:var(--maguey);">contacto@cascabel.io</div>
+        <div style="font-size:0.78rem; color:var(--maguey);">Cascabel Sports Intelligence · cascabel.io</div>
+      </div>
+    </div>
+    <form
+      id="contact-form"
+      class="cta-form reveal reveal-delay-1"
+      action="https://formspree.io/f/mvzdaqvb"
+      method="POST"
+    >
+      <div class="form-row">
+        <input class="form-input" type="text" name="name" placeholder="Name" required>
+        <input class="form-input" type="text" name="club" placeholder="Club / Organization">
+      </div>
+      <input class="form-input" type="email" name="email" placeholder="Email" required>
+      <input class="form-input" type="tel" name="phone" placeholder="Phone (optional)">
+      <select class="form-select" name="area" required>
+        <option value="" disabled selected>Which area do you need help with?</option>
+        <option>Tactical Intelligence</option>
+        <option>Recruitment Intelligence</option>
+        <option>Performance Intelligence</option>
+        <option>Executive Intelligence</option>
+        <option>Not sure — I want the diagnosis</option>
+      </select>
+      <input type="hidden" name="_subject" value="New lead - Cascabel Sports Intelligence">
+      <div>
+        <button class="form-submit" type="submit">
+          Request free diagnosis →
+        </button>
+        <p class="form-note">We respond within 24 business hours.</p>
+      </div>
+    </form>
+    <div id="success-message" style="display:none; text-align:center; margin-top:20px;">
+      <h2>Thank you!</h2>
+      <p>Our team will be in touch shortly.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">cascabel<span>.io</span></div>
+        <div class="footer-tagline">Sports Intelligence · Listen to what the game has to say.</div>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-col-title">Sports Intelligence</div>
+          <ul class="footer-links">
+            <li><a href="#modules">Tactical Intelligence</a></li>
+            <li><a href="#modules">Recruitment Intelligence</a></li>
+            <li><a href="#modules">Performance Intelligence</a></li>
+            <li><a href="#modules">Executive Intelligence</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="../index.html">cascabel.io</a></li>
+            <li><a href="../index.html#casos">Success stories</a></li>
+            <li><a href="../index.html#contacto">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <ul class="footer-links">
+            <li><a href="../index.html#servicios">Manufacturing</a></li>
+            <li><a href="../index.html#servicios">Real estate</a></li>
+            <li><a href="#">Professional football</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 cascabel.io · Mexico · All rights reserved</span>
+      <a href="mailto:contacto@cascabel.io" class="footer-email">contacto@cascabel.io</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+<script>
+  const form = document.getElementById("contact-form");
+  const successMessage = document.getElementById("success-message");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      form.style.display = "none";
+      successMessage.style.display = "block";
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
+
+</body>
+</html>
