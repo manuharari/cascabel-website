@@ -997,53 +997,7 @@ footer {
     gap: 1rem;
     text-align: center;
   }
-
-  /* ==========================================================
-   SPORTS INTELLIGENCE MODULES
-   ========================================================== */
-
-.sports-card{
-    display:flex;
-    flex-direction:column;
-    height:100%;
-}
-
-.sports-metrics{
-    display:flex;
-    flex-direction:column;
-    gap:1.75rem;
-    padding:2rem 2.5rem;
-    flex:1;
-}
-
-.sports-metrics .case-metric{
-    display:flex;
-    flex-direction:column;
-}
-
-.sports-metrics .case-metric-val{
-    font-family:var(--serif);
-    font-size:1.75rem;
-    font-weight:500;
-    color:var(--chile);
-    line-height:1.1;
-    letter-spacing:-0.02em;
-    margin-bottom:.35rem;
-}
-
-.sports-metrics .case-metric-label{
-    font-size:.82rem;
-    line-height:1.45;
-    color:var(--maguey);
-}
-
-.sports-card.light .case-metric-label{
-    color:var(--humo);
-}
-
-.sports-card .case-footer{
-    margin-top:auto;
-}
+  
 
 }
 
